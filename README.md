@@ -1,2 +1,3 @@
 # Gallery
-Galeria de fotos
+
+a [Sails](http://sailsjs.org) application
