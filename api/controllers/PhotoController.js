@@ -22,6 +22,7 @@ module.exports = {
 		    cb(null, file.filename);
 		  }
 		}, function(err, uploadedFiles) {
+		  console.log(err);
 		  if (err) return res.serverError(err);								
 	    	//	IF ERROR Return and send 500 error with error			
         
