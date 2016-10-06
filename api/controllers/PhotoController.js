@@ -7,6 +7,7 @@
 
 module.exports = {
 
+	//Carga de imagenes
 	upload: function  (req, res) {
 		if(req.method === 'GET')
 			return res.json({'status':'GET not allowed'});						
@@ -17,14 +18,19 @@ module.exports = {
 		//There are other options also .Check at skipper docs		
 
 		req.file('uploadFile').upload({
-			dirname: '../../assets/images',
+			dirname: '../../assets/images',			
 		  saveAs: function(file, cb) {
+		    console.log(file);
+		    if(file == null) return res.serverError({error: 'debe seleccionar un archivo valido'});								
+
 		    cb(null, file.filename);
 		  }
 		}, function(err, uploadedFiles) {
 		  console.log(err);
 		  if (err) return res.serverError(err);								
 	    	//	IF ERROR Return and send 500 error with error			
+
+	   if(uploadedFiles == null) return res.serverError({error: 'debe seleccionar un archivo valido'});	
         
 		Photo.create({name: uploadedFiles[0].filename,path: '../images/'+ uploadedFiles[0].filename}).exec(function(err,model){
 		if(err){
@@ -50,6 +56,7 @@ module.exports = {
 		
 	},
 
+	//Lista la galeria de imagenes
 	getgallery: function(req,res){
 
 		Photo.find().exec(function(err,data){
@@ -59,7 +66,7 @@ module.exports = {
 				items:data
 			});
 		});
-	},
+	},	
 
 };
 
