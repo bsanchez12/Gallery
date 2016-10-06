@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Visualización de Fotos</title>    
+    <script type='text/javascript' src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"></script>
+    <script type='text/javascript' src="css3-mediaqueries.js"></script>
+	<script type='text/javascript' src="bootstrap.js"></script>
+	<script type='text/javascript' src="bootstrap-submenu.js"></script>
+	<script type='text/javascript' src="jquery.js"></script>
+	<script type='text/javascript' src="jquery.placeholder.js"></script>
+	<script type='text/javascript' src="Util.js"></script>
+	<LINK REL=StyleSheet HREF="bootstrap.css" TYPE="text/css" MEDIA=screen>
+	<LINK REL=StyleSheet HREF="estilos_Gallery.css" TYPE="text/css" MEDIA=screen>
+	<LINK REL=StyleSheet HREF="font-awesome.css" TYPE="text/css" MEDIA=screen>
+</head>
+<body>
+
+ <div class="container min-container-anonymous-height">
+        <div class="row">
+            <div class="col-md-12" style="height:20px"></div>
+        </div>
+        <!--Contenido de la pagina-->
+        <section>
+
+		<!--pasos-->
+		<div class="col-md-12">
+			<div class="row wrap-steps">
+				<a href="/">
+					<div class="col-xs-12 col-md-6 step_active">
+						<span class="badge">1</span>
+						<span>Visualización</span>					
+					</div>
+				</a>
+				<a href="/upload-file">
+					<div class="col-xs-12 col-md-6 step">
+						<span class="badge">2</span>
+						<span>Cargue de Foto</span>
+					</div>	
+				</a>			
+			</div>
+		</div>
+		<!--fin pasos-->
+   <!--contenido-->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading FtM_14_w">Visualización de fotos</div>
+                <div class="panel-body panel-body-form FtM_12_detalle">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <div class="col-md-1 customer-register-number-align">
+                                <span id="step1" class="customer-register-numbers numbers-selecting">2</span>
+                            </div>
+                            <div class="col-md-11">
+                                <div class="form-group">
+                                    <div class="col-md-12 FtM_15_g">
+                                        <h5>Galeria de fotos.</h5>
+                                    </div>
+                                </div>
+																							
+								 <div class="form-group">
+											<%_.each(items,function(item){
+								 %>								 	
+									 <div class="col-xs-6 col-md-3"  >
+										  <center>  
+											<img src="<%= item.path%>" alt="<%= item.name%>" style="width:40%;">
+										  </center>
+										  <br /><br />
+									 </div>
+
+								 <%})%>					 
+								  
+							   </div>
+						   </div>
+					   </div>
+				   </div>
+			   </div>
+		   </div>
+	    </div>
+	</div>
+
+
+
+	<!--Fin Contenido-->
+   
+	   <div class="row">
+		<div class="col-md-12" style="height:20px">
+		</div>
+		</div>
+		
+</section>
+        <!--Fin Contenido-->
+    </div>
+
+    <div class="row" style="padding:0px; margin:0px">
+        <div class="col-md-12" style="height:30px"></div>
+    </div>
+	
+	 <!-- footer-->
+    <footer class="main-menu-bck">
+        <div class="container-menu footer-container">
+            <div class="row">                
+                <div class="col-md-8 col-xs-12"><span>Briam Sanchez 2016. Todos los derechos reservados</span></div>               
+            </div>
+        </div>
+    </footer>
+    <!-- fin footer-->
+
+</body>
+</html>
